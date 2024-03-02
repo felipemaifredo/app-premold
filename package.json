@@ -1,7 +1,7 @@
 {
   "name": "app-premold",
   "version": "0.1.0",
-  "homepage": "/",
+  "homepage": "https://felipemaifredo.github.io/app-premold",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
