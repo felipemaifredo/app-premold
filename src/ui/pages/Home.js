@@ -1,5 +1,5 @@
-import logo from '../../logo.svg';
-import './styles/home.css';
+import logo from '../../logo.svg'
+import './styles/home.css'
 
 export function Home() {
   return (
@@ -19,5 +19,5 @@ export function Home() {
         </a>
       </header>
     </div>
-  );
+  )
 }
