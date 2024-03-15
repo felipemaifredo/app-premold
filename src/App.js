@@ -16,6 +16,14 @@ import { FrequentlyQuestions } from "./ui/pages/Adm/FrequentlyQuestions"
 import { Banners } from "./ui/pages/Adm/Banners"
 import { ServicesMade } from "./ui/pages/Adm/ServicesMade"
 import { ServicesOffer } from "./ui/pages/Adm/ServicesOffer"
+import { AddBanner } from "./ui/pages/Adm/AddBanner"
+import { AddQuestions } from "./ui/pages/Adm/AddQuestions"
+import { AddServicesMade } from "./ui/pages/Adm/AddServicesMade"
+import { AddServicesOffer } from "./ui/pages/Adm/AddServicesOffer"
+import { EditBanner } from "./ui/pages/Adm/EditBanner"
+import { EditQuestion } from "./ui/pages/Adm/EditQuestion"
+import { EditServiceMade } from "./ui/pages/Adm/EditServiceMade"
+import { EditServiceOffer } from "./ui/pages/Adm/EditServiceOffer"
 
 export function App() {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -38,14 +46,22 @@ export function App() {
       <Routes>
         <Route path="/" element={<DefaultLayout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/admin/login" element={<Login handleLoggin={handleLoggin} />} />
         </Route>
+        <Route path="/admin/login" element={<Login handleLoggin={handleLoggin} />} />
         <Route path="/admin" element={<DefaultAdminLayout />}>
           <Route path="/admin/home" element={(loggedIn ? <HomeAdm /> : <Navigate to="/admin/login" />)} />
           <Route path="/admin/servicos-oferecidos" element={(loggedIn ? <ServicesOffer /> : <Navigate to="/admin/login" />)} />
+          <Route path="/admin/servicos-oferecidos/add" element={(loggedIn ? <AddServicesOffer /> : <Navigate to="/admin/login" />)} />
+          <Route path="/admin/servicos-oferecidos/editar/:id" element={(loggedIn ? <EditServiceOffer /> : <Navigate to="/admin/login" />)} />
           <Route path="/admin/servicos-feitos" element={(loggedIn ? <ServicesMade /> : <Navigate to="/admin/login" />)} />
+          <Route path="/admin/servicos-feitos/add" element={(loggedIn ? <AddServicesMade /> : <Navigate to="/admin/login" />)} />
+          <Route path="/admin/servicos-feitos/editar/:id" element={(loggedIn ? <EditServiceMade /> : <Navigate to="/admin/login" />)} />
           <Route path="/admin/banners" element={(loggedIn ? <Banners /> : <Navigate to="/admin/login" />)} />
+          <Route path="/admin/banners/add" element={(loggedIn ? <AddBanner /> : <Navigate to="/admin/login" />)} />
+          <Route path="/admin/banners/editar/:id" element={(loggedIn ? <EditBanner /> : <Navigate to="/admin/login" />)} />
           <Route path="/admin/perguntas-frequentes" element={(loggedIn ? <FrequentlyQuestions /> : <Navigate to="/admin/login" />)} />
+          <Route path="/admin/perguntas-frequentes/add" element={(loggedIn ? <AddQuestions /> : <Navigate to="/admin/login" />)} />
+          <Route path="/admin/perguntas-frequentes/editar/:id" element={(loggedIn ? <EditQuestion /> : <Navigate to="/admin/login" />)} />
         </Route>
       </Routes>
     </HashRouter>
