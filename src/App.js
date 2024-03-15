@@ -1,5 +1,5 @@
 //Imports
-import { Route, Routes, Navigate, HashRouter, BrowserRouter } from "react-router-dom"
+import { Route, Routes, Navigate, BrowserRouter } from "react-router-dom"
 
 import { useState, useEffect } from 'react'
 import { auth } from "./lib/FirebaseConfig"
@@ -34,7 +34,7 @@ export function App() {
   }
 
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         
         <Route path="/" element={<DefaultLayout />}>
@@ -50,6 +50,6 @@ export function App() {
         </Route>
         
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   )
 }
