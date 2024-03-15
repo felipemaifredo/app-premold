@@ -1,5 +1,5 @@
 //Imports
-import { Route, Routes, Navigate, HashRouter, BrowserRouter } from "react-router-dom"
+import { Route, Routes, Navigate, HashRouter } from "react-router-dom"
 
 import { useState, useEffect } from 'react'
 import { auth } from "./lib/FirebaseConfig"
@@ -34,7 +34,7 @@ export function App() {
   }
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<DefaultLayout />}>
           <Route path="/" element={<Home />} />
@@ -48,6 +48,6 @@ export function App() {
           <Route path="/admin/perguntas-frequentes" element={(loggedIn ? <FrequentlyQuestions /> : <Navigate to="/admin/login" />)} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
