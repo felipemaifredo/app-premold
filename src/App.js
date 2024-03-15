@@ -1,5 +1,5 @@
 //Imports
-import { Route, Routes, Navigate, useNavigate, HashRouter, BrowserRouter } from "react-router-dom"
+import { Route, Routes, Navigate, HashRouter, BrowserRouter } from "react-router-dom"
 
 import { useState, useEffect } from 'react'
 import { auth } from "./lib/FirebaseConfig"
