@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { ButtonCenter } from "../../components/adm/ButtonCenter"
+import "../../styles/pages/Adm/global.adm.styles.css"
 
 export function EditServiceMade() {
     const { id } = useParams()
@@ -7,8 +8,11 @@ export function EditServiceMade() {
         <>
             <ButtonCenter
                 homeBtn={true}
+                goBackBtn={true}
             />
-           <p> Edit {id}</p>
+            <div className="div-adm-center">
+                Page {id}
+            </div>
         </>
     )
 }

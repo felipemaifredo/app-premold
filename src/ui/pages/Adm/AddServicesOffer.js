@@ -5,8 +5,11 @@ export function AddServicesOffer() {
         <>
             <ButtonCenter
                 homeBtn={true}
+                goBackBtn={true}
             />
-            Page
+            <div className="div-adm-center">
+                Page
+            </div>
         </>
     )
 }

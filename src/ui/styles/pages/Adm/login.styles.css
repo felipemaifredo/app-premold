@@ -28,6 +28,10 @@
     font-size: 1rem;
     background-color: #f2f2f2;
     border-radius: 5px;
+    
+    &:focus {
+        outline: 1px solid var(--c-orange);
+    }
 }
 
 .login-div button {
