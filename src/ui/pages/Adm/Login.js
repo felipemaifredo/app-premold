@@ -1,11 +1,13 @@
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth'
-import { auth } from '../../../lib/FirebaseConfig'
-import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth"
+import { auth } from "../../../lib/FirebaseConfig"
+import { useNavigate } from "react-router-dom"
+import { useState } from "react"
+import "../../styles/pages/Adm/login.styles.css"
+import logoPremold from "../../assets/premold-logo-2.png"
 
 export function Login({ handleLoggin }) {
     const navigate = useNavigate()
-    document.title = 'Premold | Login'
+    document.title = "Premold | Login"
     const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth)
     const [dataLogin, setDataLogin] = useState({
         email: "",
@@ -18,13 +20,13 @@ export function Login({ handleLoggin }) {
             signInWithEmailAndPassword(dataLogin.email, dataLogin.password).then((user) => {
                 if (user) {
                     handleLoggin()
-                    navigate('/admin/home')
+                    navigate("/admin/home")
                 } else {
-                    alert('Login falhou. Verifique suas credenciais.')
+                    alert("Login falhou. Verifique suas credenciais.")
                 }
             })
         } else {
-            alert('Confira dos dados inseridos')
+            alert("Confira dos dados inseridos")
         }
     }
 
@@ -38,19 +40,22 @@ export function Login({ handleLoggin }) {
     }
 
     return (
-        <div>
+        <div className="login-div">
             <form onSubmit={handleSignIn}>
+                <img src={logoPremold} width={200} alt="Logo Premold" />
                 <input
-                    type='email' 
+                    placeholder="Email"
+                    type="email" 
                     value={dataLogin.email} 
                     onChange={(e) => setDataLogin((prevState) => ({ ...prevState, email: e.target.value }))} 
                 />
-                <input  
-                    type='password'
+                <input
+                    placeholder="Senha"
+                    type="password"
                     value={dataLogin.password} 
                     onChange={(e) => setDataLogin((prevState) => ({ ...prevState, password: e.target.value }))} 
                 />
-                <button type="submit"> Entrar </button>
+                <button type="submit"> Login </button>
             </form>
         </div>
     )
