@@ -4,6 +4,7 @@ import { useState } from "react"
 import { fetchAddData } from "../../../lib/fetchAddData"
 import { fetchUpdateWithID } from "../../../lib/fetchUpdateWithID"
 import { fetchUploadFile } from "../../../lib/fetchUploadFile"
+import { LoaginScreen } from "../../components/adm/LoadingScreen"
 
 const initalStateFormData = {
     name: "",
@@ -13,6 +14,7 @@ const initalStateFormData = {
 
 export function AddBanner() {
     const [image, setImage] = useState(null)
+    const [loadScreen, setLoadScreen] = useState(false)
     const [formData, setFormData] = useState(initalStateFormData)
 
     function handleImagemSelecionada(e) {
@@ -28,7 +30,7 @@ export function AddBanner() {
         setFormData((prevClass) => ({ ...prevClass, [name]: value }))
     }
 
-    function dataValidador() {
+    function dataValidator() {
         if (formData.name && formData.link && formData.position && image) {
             return true
         }
@@ -37,25 +39,31 @@ export function AddBanner() {
 
     async function handleSubmit(e) {
         e.preventDefault()
-        let validadeData = dataValidador()
-        if (validadeData) {
-            let docRef = await fetchAddData({ 
-                collectionName: "banners", newData: formData 
-            })
-            let updateID = fetchUpdateWithID(docRef)
-            let uploadedImage
-            if (image) {
-                uploadedImage = await fetchUploadFile({ 
-                    docRef: docRef, image: image 
+        let validateData = dataValidator()
+        setLoadScreen(true)
+        if (validateData) {
+            try {
+                let docRef = await fetchAddData({ 
+                    collectionName: "banners", newData: formData 
                 })
-            }
-            if (docRef && updateID && uploadedImage ) {
-                alert("Banner Cadastrado com Sucesso")
-                resetInputs()
-            } else {
-                alert("Erro ao Cadastrar Banner")
+                let updateID = fetchUpdateWithID(docRef)
+                let uploadedImage
+                if (image) {
+                    uploadedImage = await fetchUploadFile({ 
+                        docRef: docRef, image: image 
+                    })
+                }
+                if (docRef && updateID && uploadedImage) {
+                    setLoadScreen(false)
+                    alert("Banner Cadastrado com Sucesso")
+                    resetInputs()
+                }
+            } catch (error) {
+                setLoadScreen(false)
+                alert("Erro ao Cadastrar Banner", error)
             }
         } else {
+            setLoadScreen(false)
             alert("Confira os campos")
         }
     }
@@ -103,6 +111,7 @@ export function AddBanner() {
                     <button type="submit"> Adicionar </button>
                 </form>
             </div>
+            {loadScreen && <LoaginScreen />}
         </>
     )
 }

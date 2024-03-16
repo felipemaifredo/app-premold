@@ -1,7 +1,7 @@
 import { IoArrowBackCircle } from "react-icons/io5"
 import "../../styles/components/adm/gobackbtn.styles.css"
 
-export function GoBackButton() {
+export const GoBackButton = () => {
     function handleGoBack() {
         window.history.back()
     }

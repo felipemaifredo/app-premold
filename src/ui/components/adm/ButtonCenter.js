@@ -3,7 +3,7 @@ import { LogoutButton } from "./LogoutButton"
 import { HomeButton } from "./HomeButton"
 import { GoBackButton } from "./GoBackButton"
 
-export function ButtonCenter(props) {
+export const ButtonCenter = (props) => {
     const { homeBtn, logoutBtn, goBackBtn } = props
 
     return (
