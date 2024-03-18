@@ -15,15 +15,12 @@ import { HomeAdm } from "./ui/pages/Adm/HomeAdm"
 import { FrequentlyQuestions } from "./ui/pages/Adm/FrequentlyQuestions"
 import { Banners } from "./ui/pages/Adm/Banners"
 import { ServicesMade } from "./ui/pages/Adm/ServicesMade"
-import { ServicesOffer } from "./ui/pages/Adm/ServicesOffer"
 import { AddBanner } from "./ui/pages/Adm/AddBanner"
 import { AddQuestions } from "./ui/pages/Adm/AddQuestions"
 import { AddServicesMade } from "./ui/pages/Adm/AddServicesMade"
-import { AddServicesOffer } from "./ui/pages/Adm/AddServicesOffer"
 import { EditBanner } from "./ui/pages/Adm/EditBanner"
 import { EditQuestion } from "./ui/pages/Adm/EditQuestion"
 import { EditServiceMade } from "./ui/pages/Adm/EditServiceMade"
-import { EditServiceOffer } from "./ui/pages/Adm/EditServiceOffer"
 
 export function App() {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -50,9 +47,6 @@ export function App() {
         <Route path="/admin/login" element={<Login handleLoggin={handleLoggin} />} />
         <Route path="/admin" element={<DefaultAdminLayout />}>
           <Route path="/admin/home" element={(loggedIn ? <HomeAdm /> : <Navigate to="/admin/login" />)} />
-          <Route path="/admin/servicos-oferecidos" element={(loggedIn ? <ServicesOffer /> : <Navigate to="/admin/login" />)} />
-          <Route path="/admin/servicos-oferecidos/add" element={(loggedIn ? <AddServicesOffer /> : <Navigate to="/admin/login" />)} />
-          <Route path="/admin/servicos-oferecidos/editar/:id" element={(loggedIn ? <EditServiceOffer /> : <Navigate to="/admin/login" />)} />
           <Route path="/admin/servicos-feitos" element={(loggedIn ? <ServicesMade /> : <Navigate to="/admin/login" />)} />
           <Route path="/admin/servicos-feitos/add" element={(loggedIn ? <AddServicesMade /> : <Navigate to="/admin/login" />)} />
           <Route path="/admin/servicos-feitos/editar/:id" element={(loggedIn ? <EditServiceMade /> : <Navigate to="/admin/login" />)} />

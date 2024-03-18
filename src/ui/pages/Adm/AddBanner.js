@@ -96,14 +96,17 @@ export function AddBanner() {
                         onChange={handleInputChange}
                         value={formData.link}
                     />
-                    <input
-                        type="number"
-                        placeholder="Posição"
-                        name="position"
-                        onChange={handleInputChange}
-                        value={formData.position}
-                        min={0}
-                    />
+                    <div className="box-position">
+                        <p>Posição:</p>
+                        <input
+                            type="number"
+                            placeholder="Posição"
+                            name="position"
+                            onChange={handleInputChange}
+                            value={formData.position}
+                            min={0}
+                        />
+                    </div>
                     <label>
                         <p> {image ? "Imagem Anexada" : "Imagem não anexada"} </p>
                         <input type="file" onChange={handleImagemSelecionada} />

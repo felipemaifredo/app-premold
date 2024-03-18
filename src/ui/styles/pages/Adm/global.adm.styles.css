@@ -16,6 +16,7 @@
     align-items: center;
     justify-content: flex-start;
     gap: 20px;
+    padding-bottom: 150px;
 }
 
 .div-adm-center{
@@ -53,6 +54,10 @@
     gap: 20px;
 }
 
+.form-adm img{
+    width: 100%;
+}
+
 .form-adm input[type="file"] {
     display: none;
 }
@@ -66,7 +71,7 @@
     place-items: center;
 }
 
-.form-adm input {
+.form-adm input, .form-adm textarea {
     width: 90%;
     height: 40px;
     padding-left: 10px;
@@ -78,6 +83,11 @@
         outline: 1px solid var(--c-orange);
     }
 }
+
+.form-adm textarea {
+    height: 80px;
+}
+
 
 .form-adm button {
     width: 90%;
@@ -93,4 +103,103 @@
 
 .form-adm p{
     font-size: 1.1rem;
+}
+
+.form-adm .box-position {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    gap: 10px;
+}
+
+.container-itens .faq-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 400px;
+    background-color: var(--c-white);
+    border-radius: 8px;
+    padding-top: 15px;
+}
+
+.container-itens .services-box {
+    width: 400px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--c-white);
+}
+
+.container-itens .services-box p{
+    width: 90%;
+}
+
+.container-itens .banner-box {
+    background-color: var(--c-white);
+    width: 500px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.container-itens .banner-box img, 
+.container-itens .services-box img{
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.container-itens .banner-box .data-box{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+}
+
+.container-itens .faq-box p{
+    width: 90%;
+}
+
+.container-itens .btns-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 50px;
+    border-radius: 0 0 8px 8px;
+    background-color: rgb(185, 185, 185);
+}
+
+.container-itens .btns-box a, 
+.container-itens .btns-box button{
+    color: var(--c-orange);
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    height: 100%;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.container-itens .btns-box svg {
+    height: 50%;
+    width: 50%;
 }

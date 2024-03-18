@@ -3,6 +3,8 @@ import { useState, useEffect } from "react"
 import { fetchGetData } from "../../../lib/fetchGetData"
 import { fetchDeleteData } from "../../../lib/fetchDeleteData"
 import { ButtonCenter } from "../../components/adm/ButtonCenter"
+import { FaPen } from "react-icons/fa"
+import { FaTrash } from "react-icons/fa"
 import "../../styles/pages/Adm/global.adm.styles.css"
 
 export function Banners() {
@@ -17,7 +19,7 @@ export function Banners() {
     }, [])
 
     function handleDeleteData(props) {
-        let response = window.confirm('Tem certeza de que deseja excluir este banner?')
+        let response = window.confirm("Tem certeza de que deseja excluir este banner?")
         if (response) {
             try {
                 fetchDeleteData(props)
@@ -39,15 +41,19 @@ export function Banners() {
                     <div className="data-box">
                         <p>{position}</p>
                         <p>{name}</p>
-                        <a href={link}>{name}</a>
+                        <a href={link}> {link} </a>
                     </div>
                     <div className="btns-box">
-                        <Link to={`/admin/banners/editar/${id}`}> editar </Link>
+                        <Link to={`/admin/banners/editar/${id}`}> 
+                            <FaPen />
+                        </Link>
                         <button onClick={() => handleDeleteData({
                             collectionName: "banners",
                             id: id,
                             imgLink: img
-                        })}> Excluir </button>
+                        })}> 
+                            <FaTrash />
+                        </button>
                     </div>
                 </div>
             )
