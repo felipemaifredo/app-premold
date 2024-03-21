@@ -3,6 +3,7 @@ nav {
     place-items: center;
     height: 100px;
     background-color: #d9d9d9;
+    z-index: 9;
 }
 
 nav > div{
@@ -44,7 +45,7 @@ nav > div > ul > li a{
     font-size: 1.1rem;
     transition: all .2s;
     
-    animation: gradient 5s ease alternate infinite;
+    animation: gradient 2s ease alternate infinite;
     background: var(--c-linear-gradient-orange-to-orange);
     background-size: 200% 200%;
 
