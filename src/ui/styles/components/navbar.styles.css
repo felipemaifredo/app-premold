@@ -1,4 +1,6 @@
 nav {
+    position: fixed;
+    width: 100%;
     display: grid;
     place-items: center;
     height: 100px;
@@ -6,7 +8,7 @@ nav {
     z-index: 9;
 }
 
-nav > div{
+nav .desktop-menu {
     width: 80%;
     max-width: 2000px;
     display: flex;
@@ -14,18 +16,18 @@ nav > div{
     justify-content: space-around;
 }
 
-nav > div > ul{
+nav>.desktop-menu>ul {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
 }
 
-nav > div > ul > li{
+nav>.desktop-menu>ul>li {
     list-style: none;
 }
 
-nav > div > ul > li a{
+nav>.desktop-menu>ul>li a {
     text-decoration: none;
     font-size: 1.1rem;
     color: var(--c-orange-heavy);
@@ -44,7 +46,7 @@ nav > div > ul > li a{
     text-decoration: none;
     font-size: 1.1rem;
     transition: all .2s;
-    
+
     animation: gradient 2s ease alternate infinite;
     background: var(--c-linear-gradient-orange-to-orange);
     background-size: 200% 200%;
@@ -62,4 +64,103 @@ nav > div > ul > li a{
     to {
         background-position: 100% 50%;
     }
+}
+
+.hamburger {
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+}
+
+.hamburger input {
+    display: none;
+}
+
+.hamburger svg {
+    /* The size of the SVG defines the overall size */
+    height: 5rem;
+    /* Define the transition for transforming the SVG */
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+    fill: none;
+    stroke: var(--c-orange-heavy);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    /* Define the transition for transforming the Stroke */
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+    stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked+svg {
+    transform: rotate(-45deg);
+}
+
+.hamburger input:checked+svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+}
+
+.mobile-menu {
+    display: none;
+    position: relative;
+}
+
+.menu-mobile {
+    height: 100vh;
+    width: 70%;
+    top: 100px;
+    left: -1000px;
+    position: absolute;
+    z-index: 10;
+    background-color: #d9d9d9;
+    transition: all .6s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.input-checkbox-menu:checked ~ .menu-mobile {
+    left: 0px;
+}
+
+.menu-mobile li {
+    width: 90%;
+    list-style: none;
+}
+
+.menu-mobile li a{
+    display: block;
+    color: var(--c-orange-heavy);
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 25px;
+}
+
+.mobile-menu {
+    width: 100%;
+    height: 100%;
+  
+    align-items: center;
+    justify-content: space-around;
+}
+
+@media (max-width: 50rem) {
+    .desktop-menu {
+        display: none !important;
+    }
+    
+    .mobile-menu {
+        display: flex;
+    }
+    
 }
