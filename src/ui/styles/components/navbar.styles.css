@@ -107,11 +107,6 @@ nav>.desktop-menu>ul>li a {
     stroke-dashoffset: -32.42;
 }
 
-.mobile-menu {
-    display: none;
-    position: relative;
-}
-
 .menu-mobile {
     height: 100vh;
     width: 70%;
@@ -147,9 +142,10 @@ nav>.desktop-menu>ul>li a {
 }
 
 .mobile-menu {
+    display: none;
+    position: relative;
     width: 100%;
     height: 100%;
-  
     align-items: center;
     justify-content: space-around;
 }
