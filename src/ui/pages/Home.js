@@ -4,7 +4,7 @@ import { ContentHero } from "../sections/ContentHero"
 import { OurServices } from "../sections/OurServices"
 import { OurTecnology } from "../sections/OurTecnology"
 import { OurComp } from "../sections/OurComp"
-
+import { OurProjects } from "../sections/OurProjects"
 export function Home() {
   return (
     <div className="App">
@@ -13,6 +13,7 @@ export function Home() {
       <OurServices />
       <OurTecnology />
       <OurComp />
+      <OurProjects />
     </div>
   )
 }

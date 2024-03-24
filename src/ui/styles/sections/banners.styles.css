@@ -1,14 +1,17 @@
 #banner {
-    margin-top: 99px;
-    height: 800px;
-    width: 100%;
-    max-width: 2000px;
+/*Display stuff*/
     display: flex;
     align-items: center;
     justify-content: center;
+/*Positioning stuff*/
     position: relative;
-    background-color: var(--c-white);
     z-index: 1;
+/*Box model stuff*/
+    width: 100%;
+    max-width: 2000px;
+    height: 800px;
+    margin-top: 99px;
+    background-color: var(--c-white);
 }
 
 #banner .carrosel-banner {
@@ -18,17 +21,19 @@
 }
 
 #banner .carrosel-banner .container-carrosel-banner {
-    height: 100%;
-    width: 100%;
+/*Display stuff*/
     display: flex;
     align-items: center;
+/*Box model stuff*/
+    width: 100%;
+    height: 100%;
+/*Manipulations stuff*/
     transition: all 0.5s ease-in-out;
 }
 
 #banner .carrosel-banner .container-carrosel-banner a {
     height: 100%;
     min-width: 100%;  
-   
 }
 
 #banner .carrosel-banner .container-carrosel-banner a img {
@@ -37,27 +42,34 @@
     object-fit: cover;
 }
 
-
 #banner .banner-buttons {
-    position: absolute;
-    top: 50%;
-    right: 2%;
+/*Display stuff*/
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    background-color: rgba(255, 255, 255, 0.452);
+/*Positioning stuff*/
+    position: absolute;
+    right: 2%;
+    top: 50%;
+/*Box model stuff*/
     padding: 10px;
     border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.452);
+/*Manipulations stuff*/
     transform: translateY(-50%);
+/*Miscellaneous*/
+    gap: 5px;
 }
 
 #banner .banner-buttons button {
-    height: 20px;
+/*Box model stuff*/
     width: 20px;
+    height: 20px;
     border: none;
     border-radius: 50%;
     background-color: #8f390067;
+/*Manipulations stuff*/
     transition: all .2s;
+/*Miscellaneous*/
     cursor: pointer;
 }
 

@@ -1,11 +1,14 @@
 .section-ourserives {
-    width: 100%;
+/*Display stuff*/
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+/*Box model stuff*/
+    width: 100%;
     padding: 30px 0;
+/*Miscellaneous*/
+    gap: 50px;
 }
 
 .our-services{
@@ -15,27 +18,33 @@
 }
 
 .container-services {
+/*Display stuff*/
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 20px;
+/*Box model stuff*/
     width: 100%;  
+/*Miscellaneous*/
+    gap: 20px;
     overflow-x: auto;
     scroll-behavior: smooth;
-
     scrollbar-width: none;
 }
 
 .Navigation-btn {
+/*Positioning stuff*/
     position: absolute;
-    border: none;
-    background-color: var(--c-orange-heavy);
-    height: 50px;
-    width: 50px;
-    border-radius: 10px;
-    cursor: pointer;
     top: 50%;
+/*Box model stuff*/
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--c-orange-heavy);
+/*Manipulations stuff*/
     transform: translateY(-50%);
+/*Miscellaneous*/
+    cursor: pointer;
 }
 
 .Navigation-btn-left {
@@ -47,36 +56,44 @@
 }
 
 .Navigation-btn svg{
-    color: var(--c-white);
-    border-radius: 50%;
-    height: 30px;
+/*Box model stuff*/
     width: 30px;
+    height: 30px;
+    border-radius: 50%;
+/*Typography stuff*/
+    color: var(--c-white);
 }
 
 .service-box {
-    background-color: var(--c-orange-heavy);
-    height: 530px;
-    min-width: 300px;
-    width: 300px;
-    border-radius: 20px;
-    overflow: hidden;
+/*Display stuff*/
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+/*Box model stuff*/
+    width: 300px;
+    min-width: 300px;
+    height: 530px;
     padding-bottom: 30px;
+    border-radius: 20px;
+    background-color: var(--c-orange-heavy);
+/*Miscellaneous*/
+    overflow: hidden;
 }
 
 .service-box img{
+/*Box model stuff*/
     width: 100%;
     height: 200px;
+/*Miscellaneous*/
     object-fit: cover;
 }
 
 .service-box .title-service {
-    color: var(--c-white);
+/*Typography stuff*/
     font-size: 2rem;
     font-weight: 600;
+    color: var(--c-white);
 }
 
 .service-box .descrip-service {
@@ -86,23 +103,28 @@
 }
 
 .service-box span{
-    height: 3px;
+/*Box model stuff*/
     width: 90%;
+    height: 3px;
     background-color: var(--c-white);
 }
 
 .service-box a{
+/*Display stuff*/
+    display: grid;
+/*Box model stuff*/
+    width: 150px;
+    height: 35px;
+    min-height: 35px;
+    border-radius: 15px;
+    background-color: var(--c-white);
+/*Typography stuff*/
+    font-weight: 600;
     text-align: center;
     text-decoration: none;
-    font-weight: 600;
     color: var(--c-orange-heavy);
-    width: 150px;
-    min-height: 35px;
-    height: 35px;
-    display: grid;
+/*Miscellaneous*/
     place-items: center;
-    background-color: var(--c-white);
-    border-radius: 15px;
 }
 
 @media (max-width: 44rem) {

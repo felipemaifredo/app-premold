@@ -1,0 +1,90 @@
+.ourprojects-section {
+/*Display stuff*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+/*Box model stuff*/
+    width: 100%;
+    padding: 50px 0;
+/*Miscellaneous*/
+    gap: 50px;
+}
+
+.projects-container {
+/*Display stuff*/
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+/*Box model stuff*/
+    width: 80%;
+/*Miscellaneous*/
+    gap: 30px;
+}
+
+.project-card {
+/*Display stuff*/
+    display: flex;  
+/*Box model stuff*/
+    width: 700px;
+    height: 350px;
+    border-radius: 20px;
+    background-color: var(--c-orange-heavy); 
+}
+
+.project-info {
+/*Display stuff*/
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+/*Box model stuff*/
+    width: 350px;
+    height: 350px;
+    padding: 20px;
+    border-radius: 0 10px 10px 0;   
+/*Miscellaneous*/
+    gap: 5px;
+    overflow: hidden;   
+}
+
+.project-card .project-title {
+/*Typography stuff*/
+    font-weight: 600;
+    color: var(--c-white);
+}
+
+.project-card .project-location {
+/*Typography stuff*/
+    color: var(--c-white);
+}
+
+.project-card img {
+/*Box model stuff*/
+    width: 350px;
+    height: 300px;
+    border-radius: 10px 10px 0 0;
+/*Manipulations stuff*/
+    transition: all .5s;
+/*Miscellaneous*/
+    object-fit: cover;
+}
+
+.project-preview-info {
+/*Display stuff*/
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+/*Box model stuff*/
+    padding-left: 20px;
+/*Manipulations stuff*/
+}
+
+.project-info .project-description {
+/*Box model stuff*/
+    margin-top: 10px;
+/*Typography stuff*/
+    color: var(--c-white);
+}

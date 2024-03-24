@@ -46,7 +46,6 @@ nav>.desktop-menu>ul>li a {
     text-decoration: none;
     font-size: 1.1rem;
     transition: all .2s;
-
     animation: gradient 2s ease alternate infinite;
     background: var(--c-linear-gradient-orange-to-orange);
     background-size: 200% 200%;

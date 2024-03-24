@@ -1,7 +1,10 @@
 footer {
-    height: 200px;
+/*Display stuff*/
     display: grid;
-    place-items: center;
-    background-color: var(--c-orange-heavy);
+/*Box model stuff*/
+    height: 200px;
     margin-top: 200px;
+    background-color: var(--c-orange-heavy);
+/*Miscellaneous*/
+    place-items: center;
 }
