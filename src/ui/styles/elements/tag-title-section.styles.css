@@ -1,5 +1,5 @@
 .container-tag-title {
-    
+    width: 77%;
 }
 
 .tag-title-section {
@@ -28,4 +28,10 @@
 
 .tag-title-section p{
     font-weight: 600;
+}
+
+@media (max-width: 47rem) {
+    .container-tag-title {
+        width: 95%;
+    }
 }

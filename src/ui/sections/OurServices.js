@@ -1,5 +1,5 @@
 import { TagTitleSection } from "../elements/TagTitleSection"
-import "../styles/elements/ourservices.styles.css"
+import "../styles/sections/ourservices.styles.css"
 import project from "../assets/project.webp"
 import { useRef, useState } from "react"
 import { FaArrowRight } from "react-icons/fa";
