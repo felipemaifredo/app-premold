@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.f3b0556f.css",
+    "main.css": "/static/css/main.7d3fbd03.css",
     "main.js": "/static/js/main.ff210430.js",
     "static/js/453.38b133fd.chunk.js": "/static/js/453.38b133fd.chunk.js",
     "static/media/img.png": "/static/media/img.9ed9fdef904cb18bf028.png",
@@ -8,12 +8,12 @@
     "static/media/premold-logo.png": "/static/media/premold-logo.85ef80d83d12ccf8adc6.png",
     "static/media/premold-logo-2.png": "/static/media/premold-logo-2.4abc139bdca683ac0aba.png",
     "index.html": "/index.html",
-    "main.f3b0556f.css.map": "/static/css/main.f3b0556f.css.map",
+    "main.7d3fbd03.css.map": "/static/css/main.7d3fbd03.css.map",
     "main.ff210430.js.map": "/static/js/main.ff210430.js.map",
     "453.38b133fd.chunk.js.map": "/static/js/453.38b133fd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f3b0556f.css",
+    "static/css/main.7d3fbd03.css",
     "static/js/main.ff210430.js"
   ]
 }
