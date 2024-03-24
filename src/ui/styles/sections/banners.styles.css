@@ -69,6 +69,6 @@
 
 @media (max-width: 900px) {
     #banner {
-        height: fit-content;
+        height: auto;
     }
 }
