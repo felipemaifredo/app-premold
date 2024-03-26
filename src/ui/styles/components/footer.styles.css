@@ -1,10 +1,114 @@
 footer {
 /*Display stuff*/
-    display: grid;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 15%;
 /*Box model stuff*/
-    height: 200px;
-    margin-top: 200px;
+    height: 400px;
     background-color: var(--c-orange-heavy);
 /*Miscellaneous*/
+}
+
+footer .left-side, footer .center-side , footer .right-side{
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 30px;
+    padding-top: 50px;
+}
+
+footer .left-side .img-container {
+    background-color: var(--c-white);
+    width: 250px;
+    height: 60px;
+    display: grid;
     place-items: center;
+    border-radius: 30px;
+}
+
+footer .left-side .img-container img {
+    width: 200px;
+}
+
+footer .left-side p {
+    color: var(--c-white);
+    font-weight: 600;
+    width: 400px;
+}
+
+
+footer .left-side .social-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+footer .left-side .social-container a{
+    display: inline-block;
+    background-color: var(--c-orange);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+footer .left-side .social-container a svg{
+    color: var(--c-white);
+    height: 50%;
+    width: 50%;
+}
+
+.center-side {
+    gap: 5px !important;
+}
+
+.center-side .title{
+    font-weight: 600;
+    color: var(--c-white);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.center-side a{
+    text-decoration: none;
+    color: var(--c-white);
+    padding: 10px;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.icon-box {
+    height: 40px;
+    display: grid;
+    place-items: center;
+    background-color: var(--c-white);
+    width: 40px;
+    border-radius: 50%;
+}
+
+.icon-box svg{
+    color: var(--c-orange);
+    height: 50%;
+    width: 50%;
+}
+
+.data-box {
+
+}
+
+.data-box p {
+    color: var(--c-white);
+    font-weight: 600;
 }

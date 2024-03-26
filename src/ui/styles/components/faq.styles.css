@@ -1,0 +1,30 @@
+.faq-container {
+    height: 100%;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 30px;
+    overflow: scroll;
+}
+
+.faq-container h3{
+    color: var(--c-white);
+    font-size: 2.2rem;
+}
+
+.faq-container .question-box {
+   
+}
+
+.faq-container .question-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--c-white);
+}
+
+.faq-container .question-response {
+    margin-top: 10px;
+    color: var(--c-white);
+}

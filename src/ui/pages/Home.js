@@ -5,6 +5,8 @@ import { OurServices } from "../sections/OurServices"
 import { OurTecnology } from "../sections/OurTecnology"
 import { OurComp } from "../sections/OurComp"
 import { OurProjects } from "../sections/OurProjects"
+import { ContactSection } from "../sections/ContactSection"
+
 export function Home() {
   return (
     <div className="App">
@@ -14,6 +16,7 @@ export function Home() {
       <OurTecnology />
       <OurComp />
       <OurProjects />
+      <ContactSection />
     </div>
   )
 }
