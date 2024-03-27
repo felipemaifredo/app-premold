@@ -62,7 +62,7 @@ export const OurProjects = () => {
     }
 
     return (
-        <section className="ourprojects-section">
+        <section id="our-projects" className="ourprojects-section">
             <TagTitleSection title="Projetos Feitos" />
             <div className="projects-container">
                 <RenderProjects />

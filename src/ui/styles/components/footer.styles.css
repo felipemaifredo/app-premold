@@ -112,3 +112,29 @@ footer .left-side .social-container a svg{
     color: var(--c-white);
     font-weight: 600;
 }
+
+@media (max-width: 75rem) {
+    footer {
+        gap: 50px;
+    }
+}
+
+@media (max-width: 60rem) {
+    footer {
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0px;
+        padding-bottom: 50px;
+    }
+
+    footer .left-side p {
+        width: 90%;
+    }
+
+    footer .left-side{
+        justify-content: center;
+        align-items: center;
+    }
+}

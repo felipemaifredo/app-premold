@@ -5,7 +5,7 @@ import "../styles/sections/contact.styles.css"
 export const ContactSection = () => {
 
     return (
-        <section className="contact-section">
+        <section id="contact" className="contact-section">
             <FormContact />
             <FAQ />
         </section>

@@ -6,8 +6,18 @@ import { OurTecnology } from "../sections/OurTecnology"
 import { OurComp } from "../sections/OurComp"
 import { OurProjects } from "../sections/OurProjects"
 import { ContactSection } from "../sections/ContactSection"
+import { useEffect } from "react"
 
 export function Home() {
+  useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+      })
+    }
+    scrollToTop()
+  })
+  
   return (
     <div className="App">
       <BannerSection />

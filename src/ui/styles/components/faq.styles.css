@@ -1,5 +1,6 @@
 .faq-container {
     height: 100%;
+    max-height: 600px;
     width: 600px;
     display: flex;
     flex-direction: column;
@@ -27,4 +28,10 @@
 .faq-container .question-response {
     margin-top: 10px;
     color: var(--c-white);
+}
+
+@media (max-width: 43.75rem) {
+    .faq-container {
+        width: 90%;
+    }
 }

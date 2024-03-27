@@ -10,3 +10,15 @@
 }
 
 
+@media (max-width: 68.75rem) {
+    .contact-section{
+        height: auto;
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width: 29.375rem) {
+    .contact-section form{
+        width: 90%;
+    }
+}

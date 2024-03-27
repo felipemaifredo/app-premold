@@ -1,3 +1,4 @@
+import { scrollToSection } from "../../lib/scrollToSection"
 export const BtnTogether1 = () => (
-    <a href="#contact">Vamos construir juntos!</a>
+    <a onClick={(e) => scrollToSection(e)} href="#contact">Vamos construir juntos!</a>
 )

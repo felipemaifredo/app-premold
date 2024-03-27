@@ -9,6 +9,7 @@
     padding: 50px 0;
 /*Miscellaneous*/
     gap: 50px;
+    overflow-x: hidden;
 }
 
 .projects-container {

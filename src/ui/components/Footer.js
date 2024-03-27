@@ -1,11 +1,12 @@
 import "../styles/components/footer.styles.css"
 import logo1 from "../assets/premold-logo-v2.png"
-import { FaFacebook } from "react-icons/fa";
-import { RiInstagramFill } from "react-icons/ri";
-import { FaLinkedin } from "react-icons/fa";
-import { FaWhatsapp } from "react-icons/fa6";
-import { FaPhone } from "react-icons/fa6";
-import { MdEmail } from "react-icons/md";
+import { FaFacebook } from "react-icons/fa"
+import { RiInstagramFill } from "react-icons/ri"
+import { FaLinkedin } from "react-icons/fa"
+import { FaWhatsapp } from "react-icons/fa6"
+import { FaPhone } from "react-icons/fa6"
+import { MdEmail } from "react-icons/md"
+import { scrollToSection } from "../../lib/scrollToSection"
 
 export const Footer = () => {
     return (
@@ -29,11 +30,11 @@ export const Footer = () => {
             </div>
             <div className="center-side">
                 <p className="title">Links Importantes</p>
-                <a href="google.com"> Inicio </a>
-                <a href="google.com"> Serviços </a>
-                <a href="google.com"> Projetos </a>
+                <a onClick={(e) => scrollToSection(e)} href="#banner"> Inicio </a>
+                <a onClick={(e) => scrollToSection(e)} href="#our-services" > Serviços </a>
+                <a onClick={(e) => scrollToSection(e)} href="#our-projects" > Projetos </a>
                 <a href="google.com"> Quem Somos </a>
-                <a href="google.com"> Contato </a>
+                <a onClick={(e) => scrollToSection(e)} href="#contact"> Contato </a>
             </div>
             <div className="right-side">
                 <a 

@@ -1,15 +1,17 @@
 import logoPremold from "../assets/premold-logo.png"
 import "../styles/components/navbar.styles.css"
+import { scrollToSection } from "../../lib/scrollToSection"
+import { Link } from "react-router-dom"
 
 export const Navbar = () => {
     const LogoMenu = () => (
-        <a href="https://google.com" width={200}>
+        <Link to="/">
             <img src={logoPremold} alt="Logo Premold" height={60} />
-        </a>
+        </Link>
     )
-
+    
     const BtnOrchament = () => (
-        <a className="nav-link" href="#contact"> Solicitar Orçamento </a>
+        <a onClick={(e) => scrollToSection(e)} href="#contact" className="nav-link"> Solicitar Orçamento </a>
     )
 
     const DesktopMenu = () => {
@@ -17,9 +19,10 @@ export const Navbar = () => {
             <div className="desktop-menu">
                 <LogoMenu />
                 <ul>
-                    <li> <a href="#services"> Serviços </a> </li>
-                    <li> <a href="#projects"> Projetos </a> </li>
-                    <li> <a href="#contact"> Contato </a> </li>
+                    <li> <a onClick={(e) => scrollToSection(e)} href="#banner"> Home </a> </li>
+                    <li> <a onClick={(e) => scrollToSection(e)} href="#our-services"> Serviços </a> </li>
+                    <li> <a onClick={(e) => scrollToSection(e)} href="#our-projects"> Projetos </a> </li>
+                    <li> <a onClick={(e) => scrollToSection(e)} href="#contact"> Contato </a> </li>
                 </ul>
                 <BtnOrchament />
             </div>
@@ -36,12 +39,12 @@ export const Navbar = () => {
                         <path class="line" d="M7 16 27 16"></path>
                     </svg>
                     <ul className="menu-mobile">
-                        <li> <a href="#services"> Serviços </a> </li>
-                        <li> <a href="#projects"> Projetos </a> </li>
-                        <li> <a href="#contact"> Contato </a> </li>
+                        <li> <a onClick={(e) => scrollToSection(e)} href="#banner"> Home </a> </li>
+                        <li> <a onClick={(e) => scrollToSection(e)} href="#our-services"> Serviços </a> </li>
+                        <li> <a onClick={(e) => scrollToSection(e)} href="#our-projects"> Projetos </a> </li>
+                        <li> <a onClick={(e) => scrollToSection(e)} href="#contact"> Contato </a> </li>
                         <BtnOrchament />
                     </ul>
-
                 </label>
                 <LogoMenu />
             </div>

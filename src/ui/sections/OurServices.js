@@ -94,7 +94,7 @@ export const OurServices = () => {
     }
 
     return (
-        <section className="section-ourserives">
+        <section id="our-services" className="section-ourserives">
             <TagTitleSection title="Nossos Serviços" />
             <div className="our-services">
                     <button className='Navigation-btn Navigation-btn-left' onClick={handlePrevClick}>
@@ -115,77 +115,3 @@ export const OurServices = () => {
         </section>
     )
 }
-
-/*
-import Image from "next/image"
-import { FaArrowRight } from "react-icons/fa";
-import { FaArrowLeft } from "react-icons/fa6";
-
-export function DepoimentsSection() {
-    const [depoiments, setDepoiments] = useState([])
-    const containerRef = useRef(null);
-    const [containerWidth, setContainerWidth] = useState(0);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const data = await fetchGetMultData("depoiments")
-            setDepoiments(data)
-        }
-
-        fetchData()
-    }, [])
-
-    function RenderDepoiment({ depoiment }) {
-        return (
-            <div className="depoiment-card" key={depoiment.id}>
-                <Image
-                    src={depoiment.img}
-                    alt="Imagem de Depoente"
-                    width={200}
-                    height={200} />
-                <div className="content-container">
-                    <p className="title">{depoiment.name}</p>
-                    <p>{depoiment.depoiment}</p>
-                </div>
-                <a target="_blanck" href={depoiment.link}>Ver vídeo</a>
-            </div>
-        )
-    }
-
-    function handleNextClick() {
-        containerRef.current.scrollLeft += containerWidth / 2
-    }
-
-    function handlePrevClick() {
-        containerRef.current.scrollLeft -= containerWidth / 2
-    }
-
-    function handleContainerResize() {
-        const containerDimensions = containerRef.current.getBoundingClientRect()
-        setContainerWidth(containerDimensions.width)
-    }
-
-    return (
-        <section className="depoiments-section">
-            <div className="depoiments-container">
-                <button className='Navigation-btn-left' onClick={handlePrevClick}>
-                    <FaArrowLeft />
-                </button>
-                <button className='Navigation-btn-right' onClick={handleNextClick}>
-                    <FaArrowRight />
-                </button>
-                <div
-                    className='container'
-                    ref={containerRef}
-                    onLoad={handleContainerResize}
-                    onResize={handleContainerResize}
-                >
-                    {depoiments.map((depoiment) => (
-                        <RenderDepoiment key={depoiment.id} depoiment={depoiment} />
-                    ))}
-                </div>
-            </div>
-        </section>
-    )
-}
-*/

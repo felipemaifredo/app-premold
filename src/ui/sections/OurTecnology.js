@@ -5,7 +5,7 @@ import { FaCheckCircle } from "react-icons/fa";
 
 export const OurTecnology = () => {
     return (
-        <section className="our-tecnology-section">
+        <section id="our-tecnology" className="our-tecnology-section">
             <TagTitleSection title="Nossa Tecnologia" />
             <div className="content-tecnology">
                 <div className="tec-img-box">
