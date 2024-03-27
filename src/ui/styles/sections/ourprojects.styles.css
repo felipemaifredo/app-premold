@@ -88,3 +88,13 @@
 /*Typography stuff*/
     color: var(--c-white);
 }
+
+.button-projects {
+    padding: 10px 30px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--c-orange-heavy);
+    color: var(--c-white);
+    font-weight: 600;
+}

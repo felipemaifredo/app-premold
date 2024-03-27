@@ -1,8 +1,9 @@
 import "../styles/components/form-contact.styles.css"
-import { useState } from 'react'
-const linkToFetch = 'https://formsubmit.co/felipemaifredo@gmail.com'
+import { useState } from "react"
+import { fetchSendEmail } from "../../lib/fetchSendEmail"
 
 export const FormContact = () => {
+    const [textBtn, setTextBtn] = useState("Enviar")
     const [formData, setFormData] = useState({
         name: "",
         phone: "",
@@ -18,8 +19,39 @@ export const FormContact = () => {
         }))
     }
 
-    function handleSubmit(e) {
-        e.preventDefault()
+    async function handleSubmit(e) {
+        e.preventDefault();
+        setTextBtn("Enviando...")
+        try {
+            let response = await fetchSendEmail(formData);
+            if (response === "200") {
+                setTextBtn("Mensagem Enviada!")
+                ChangeTextBtnOnTime("Enviar")
+                cleamForm()
+            } else {
+                setTextBtn("Erro, tente novamente")
+                ChangeTextBtnOnTime("Enviar")
+            }
+        } catch (error) {
+            setTextBtn("Erro, tente novamente")
+            ChangeTextBtnOnTime("Enviar")
+        }
+    }
+
+    function ChangeTextBtnOnTime(text) {
+        setTimeout(() => {
+            setTextBtn(text)
+        }, 5000)
+    }
+    
+    function cleamForm() {
+        setFormData({
+            name: "",
+            phone: "",
+            email: "",
+            subject: "",
+            message: ""
+        })
     }
 
     return (
@@ -37,7 +69,7 @@ export const FormContact = () => {
             />
             <input
                 type="tel"
-                pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}" placeholder="Seu Telefone (com DDD)"
+                placeholder="Seu Telefone (com DDD)"
                 name="phone"
                 onChange={(e) => handleInputChange(e)}
                 value={formData.phone}
@@ -63,7 +95,7 @@ export const FormContact = () => {
                 value={formData.message}
             />
             <button type="submit">
-                Enviar
+                {textBtn}
             </button>
         </form>
     )

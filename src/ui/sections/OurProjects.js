@@ -4,7 +4,9 @@ import { fetchGetData } from "../../lib/fetchGetData"
 import { useState, useEffect } from "react"
 
 export const OurProjects = () => {
+    const numberItens = 3
     const [projectsData, setProjectsData] = useState([])
+    const [projectsToShow, setProjectsToShow] = useState(numberItens)
 
     useEffect(() => {
         async function fetchData() {
@@ -15,7 +17,6 @@ export const OurProjects = () => {
     }, [])
 
     const RenderProjects = () => {
-
         const RenderProject = (props) => {
             let { name, description, img, location } = props
 
@@ -39,7 +40,7 @@ export const OurProjects = () => {
 
         return (
             <>
-                {projectsData.map((project) => (
+                {projectsData.slice(0, projectsToShow).map((project) => (
                     <RenderProject
                         key={project.id}
                         name={project.name}
@@ -52,12 +53,26 @@ export const OurProjects = () => {
         )
     }
 
+    function loadMoreProjects() {
+        setProjectsToShow((prevCount) => prevCount + numberItens)
+    }
+
+    function showLessProjects() {
+        setProjectsToShow(numberItens)
+    }
+
     return (
         <section className="ourprojects-section">
             <TagTitleSection title="Projetos Feitos" />
             <div className="projects-container">
                 <RenderProjects />
             </div>
+            {projectsToShow < projectsData.length && (
+                <button className="button-projects" onClick={loadMoreProjects}>Mostrar Mais</button>
+            )}
+            {projectsToShow >= projectsData.length && (
+                <button className="button-projects" onClick={showLessProjects}>Mostrar Menos</button>
+            )}
         </section>
     )
 }
