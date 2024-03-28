@@ -2,9 +2,10 @@ import { TagTitleSection } from "../elements/TagTitleSection"
 import "../styles/sections/ourprojects.styles.css"
 import { fetchGetData } from "../../lib/fetchGetData"
 import { useState, useEffect } from "react"
+import { scrollToSection } from "../../lib/scrollToSection"
 
 export const OurProjects = () => {
-    const numberItens = 3
+    const numberItens = 4
     const [projectsData, setProjectsData] = useState([])
     const [projectsToShow, setProjectsToShow] = useState(numberItens)
 
@@ -16,10 +17,33 @@ export const OurProjects = () => {
         fetchData()
     }, [])
 
+    function scrollToTop() {
+        let toSection = document.querySelector("#our-projects").offsetTop
+        window.scroll({
+            top: toSection - 100,
+            behavior: "smooth",
+        })
+    }
+
+    const HoveredItem = (props) => {
+        let { name, location, description, img } = props
+        return (
+            <div className="project-card-hovered">
+                <div className="project-preview">
+                    <img src={img} alt="Imagem de Projeto" />
+                </div>
+                <div className="project-info">
+                    <p className="project-title">{name}</p>
+                    <p className="project-location">{location}</p>
+                    <p className="project-description">{description}</p>
+                </div>
+            </div>
+        )
+    }
+
     const RenderProjects = () => {
         const RenderProject = (props) => {
-            let { name, description, img, location } = props
-
+            let { name, img, location, description } = props
             return (
                 <div className="project-card">
                     <div className="project-preview">
@@ -29,11 +53,12 @@ export const OurProjects = () => {
                             <p className="project-location">{location}</p>
                         </div>
                     </div>
-                    <div className="project-info">
-                        <p className="project-title">{name}</p>
-                        <p className="project-location">{location}</p>
-                        <p className="project-description">{description}</p>
-                    </div>
+                    <HoveredItem
+                        name={name}
+                        img={img}
+                        location={location}
+                        description={description}
+                    />
                 </div>
             )
         }
@@ -59,6 +84,7 @@ export const OurProjects = () => {
 
     function showLessProjects() {
         setProjectsToShow(numberItens)
+        scrollToTop()
     }
 
     return (
