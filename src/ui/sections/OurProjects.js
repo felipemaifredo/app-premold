@@ -2,7 +2,6 @@ import { TagTitleSection } from "../elements/TagTitleSection"
 import "../styles/sections/ourprojects.styles.css"
 import { fetchGetData } from "../../lib/fetchGetData"
 import { useState, useEffect } from "react"
-import { scrollToSection } from "../../lib/scrollToSection"
 
 export const OurProjects = () => {
     const numberItens = 4
